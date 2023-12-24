@@ -1,0 +1,21 @@
+:root {
+    background-color: grey;
+    font-size: 62.5%;
+    color: blue;
+
+}
+/* Using root to rem for global styling for all htmls, so we don't need to make multiple stylesheets */
+/* Default font-size of page = 16px, so setting root to 62.5% = 10px */
+/* 1 rem = 10px */
+
+/* But, if for any reason we need to make another sheet for anyreason we can */
+
+body {
+    font-size: 1.6rem;
+}
+footer {
+    font-size: 1.6rem;
+}
+/* Accessiblity for browsers with font scaling */
+
+/* So just scale font sizes via rem (1 rem = 10px)  

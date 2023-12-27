@@ -12,10 +12,31 @@
 
 body {
     font-size: 1.6rem;
+    background: grey;
 }
 footer {
     font-size: 1.6rem;
 }
 /* Accessiblity for browsers with font scaling */
 
-/* So just scale font sizes via rem (1 rem = 10px)  
+/* So just scale font sizes via rem (1 rem = 10px) */ 
+.workouts {
+    margin: 10px; /* Add margin for spacing between elements */
+    margin-top: 50vh;
+}
+.workout-display {
+    display: flex;
+    justify-content: center;
+}
+.workouts a {
+    text-decoration: none;
+    padding: 8px 16px;
+    color: #fff;
+    border-radius: 5px;
+}
+.Available {
+    background-color:green
+}
+.not-Available {
+    background-color:red
+}

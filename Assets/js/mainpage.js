@@ -85,7 +85,7 @@ function getAirQuality(city) {
         success: function (result) {
             console.log(result);
             
-            createAirQualityInfoDiv.innerHTML = "";
+            airQualityEl.innerHTML = "";
             airQualityValue.textContent = "Local Air Quality Index: " + result.overall_aqi;
             createAirQualityInfoDiv.appendChild(airQualityValue);
             airQualityEl.appendChild(createAirQualityInfoDiv);

@@ -24,7 +24,7 @@ function displayFinishRestingDay(workoutTitle){
     // display the value in finish-resting-day element
     var FinishRestingDayElement = document.getElementById("finish-resting-day");
     if (FinishRestingDayElement) {
-        FinishRestingDayElement.innerText = restingDayValue;
+        FinishRestingDayElement.innerText = "Exercise will be available on : "+ restingDayValue;
     }
 }
 
@@ -63,3 +63,77 @@ var workoutTitleOnLoad =localStorage.getItem('title');
 if (workoutTitleOnLoad && checkWorkoutTitleInLocalStorage(workoutTitleOnLoad)) {
     displayFinishRestingDay(workoutTitleOnLoad);
 }
+
+
+//-------exercises API ----------//
+
+// getting the title text as the exercise name 
+var muscle = workoutTitle
+const settings = {
+	async: true,
+	crossDomain: true,
+	url: 'https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?' + muscle,
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '837bd24d63mshff4c202742d0dbfp14a012jsn2368043f393c',
+		'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
+	}
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+    // checks if the response is an array and has at least 5 items
+    if (Array.isArray(response) && response.length >= 5) {
+        //makes the array a random order 
+        const shuffleExercises = response.sort(() => Math.random() - 0.5);
+        // get the first 5 items from the array
+        const randomExercises = shuffleExercises.slice(0, 5);
+
+        // get id element from html
+        const container = $("#exerciseContainer");
+
+        // clears container
+        container.empty();
+
+        // loop through exercises and append them to the container
+        randomExercises.forEach((exercise, index) => {
+            // create a unique ID for each div
+            const divID = "exerciseDiv" + index;
+
+            //check if theres a timer on this page and if there is dont show exercises
+            if (!checkWorkoutTitleInLocalStorage(workoutTitle)) {
+               const exerciseDiv = $("<div>").attr("id", divID).addClass("exercise-styling"); 
+
+                // create element 
+                const exerciseName = $("<h1>").attr('id',divID).text("Exercise: " + exercise.name);
+                const exercisedifficulty = $("<p>").attr('id',divID).text("Difficulty: " + exercise.difficulty);
+                const exerciseequipment = $("<p>").attr('id',divID).text("Equipment: " + exercise.equipment);
+                const exerciseinstructions= $("<p>").attr('id',divID).text("Instructions: " + exercise.instructions);
+                const exercisemuscle= $("<p>").attr('id',divID).text("Muscle: " + exercise.muscle);
+                const exercisetype= $("<p>").attr('id',divID).text("Type: " + exercise.type);
+                
+                // appends each element inside a div 
+                exerciseDiv.append (exerciseName);
+                exerciseDiv.append (exercisemuscle);
+                exerciseDiv.append (exercisetype);
+                exerciseDiv.append (exercisedifficulty);
+                exerciseDiv.append (exerciseequipment);
+                exerciseDiv.append (exerciseinstructions);
+
+
+                // appends all the divs inside the container
+                container.append(exerciseDiv);
+            }else {
+                null
+            }
+            
+
+
+            
+
+        })
+
+
+        console.log(randomExercises);
+    }
+});

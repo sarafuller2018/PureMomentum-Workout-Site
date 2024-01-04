@@ -40,3 +40,17 @@ footer {
 .not-Available {
     background-color:red
 }
+
+/* workout page showing exercises */
+#exerciseContainer {
+    display: flex;
+    flex-direction: row;
+}
+.exercise-styling{
+    width: 20vw;
+    margin-right: 20px;
+    border: 1px solid black;
+    padding:10px;
+    margin-bottom: 20px;
+}
+

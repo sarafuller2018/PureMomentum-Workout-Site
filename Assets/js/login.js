@@ -26,7 +26,6 @@ function saveToLocalStorage() {
         // Convert the object to a JSON string and store in local storage
         localStorage.setItem('user', JSON.stringify(user));
 
-
         // clear input 
         document.getElementById("login-name").value = "";
         document.getElementById("login-lastName").value = "";

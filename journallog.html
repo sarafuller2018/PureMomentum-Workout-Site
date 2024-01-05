@@ -18,19 +18,21 @@
 
     <section>
         <form>
-            <input type="text"> <!--save to localStorage--><!--then retrieved from localStorage-->
+            <label>Submit the date, the area of focus for the workout, and a brief journal log describing your workout and personal feedback.</label>
+            <input type="text" id="journalEntry"> <!--save to localStorage--><!--then retrieved from localStorage-->
+            <input type="submit" id="submitJournalButton">
         </form>
-        <button>Submit</button>
+    </section>
+
+    <section>
+        <div id="currentJournal"></div>
+        <div id="previousJournals"></div>
+        <!--localstorage displays previous workout journals-->
     </section>
 
     <a href="mainpage.html">
         <button>Home Page</button>
-    </a>
-
-    <section>
-        <!--localstorage displays previous workout journals-->
-    </section>
-    
+    </a>   
 
     <script src="./Assets/js/journallog.js"></script>
 </body>

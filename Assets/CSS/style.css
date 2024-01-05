@@ -1,18 +1,4 @@
 
-.workouts {
-    margin: 10px; /* Add margin for spacing between elements */
-    margin-top: 50vh;
-}
-.workout-display {
-    display: flex;
-    justify-content: center;
-}
-.workouts a {
-    text-decoration: none;
-    padding: 8px 16px;
-    color: #fff;
-    border-radius: 5px;
-}
 .Available {
     background-color:green
 }

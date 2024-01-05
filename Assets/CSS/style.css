@@ -1,5 +1,4 @@
 :root {
-    background-color: grey;
     font-size: 62.5%;
     color: blue;
 
@@ -12,7 +11,7 @@
 
 body {
     font-size: 1.6rem;
-    background: grey;
+    
 }
 footer {
     font-size: 1.6rem;

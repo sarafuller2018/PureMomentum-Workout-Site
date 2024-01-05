@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-
 function saveToLocalStorage() {
     // Get values from input fields
     var firstName = document.getElementById('login-name').value;

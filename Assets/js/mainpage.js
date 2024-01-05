@@ -3,7 +3,7 @@ var airQualityEl = document.getElementById("airQualityInformation");
 var localCityNameEl = document.getElementById("localCityName");
 var localCitySubmitButtonEl = document.getElementById("localCitySubmitButton");
 
-// get the from button and save it to local storage
+// get the title from button and save it to local storage
 var workoutLinks = document.querySelectorAll(".title-names");
 var workoutTitle = localStorage.getItem("title");
 
@@ -61,12 +61,26 @@ function cleanLocalStorage() {
     }
 };
 
-// calling air quality API function on submit
+// check if there is a city saved to local storage when page loads
+// call API with that city if yes
+document.addEventListener("DOMContentLoaded", function() {
+    var savedCity = localStorage.getItem("city");
+    console.log(savedCity);
+
+    // if city exists call airquality function
+    if (savedCity) {
+        getAirQuality(savedCity);
+    }
+});
+
+// calling air quality API function on submit of new city
 localCitySubmitButtonEl.addEventListener("click", function (event) {
     event.preventDefault();
 
     var city = localCityNameEl.value;
     console.log(city);
+
+    localStorage.setItem("city", city);
 
     getAirQuality(city);
 });
@@ -87,7 +101,7 @@ function getAirQuality(city) {
             console.log(result);
 
             airQualityEl.innerHTML = "";
-            airQualityValue.textContent = "Local AQI: " + result.overall_aqi;
+            airQualityValue.textContent = city + " Local AQI: " + result.overall_aqi;
             createAirQualityInfoDiv.appendChild(airQualityValue);
             airQualityEl.appendChild(createAirQualityInfoDiv);
 
@@ -126,8 +140,3 @@ function getAirQuality(city) {
         }
     });
 };
-
-// var savedCity = localStorage.getItem("city");
-// function saveToLocalStorage() {
-    
-// }

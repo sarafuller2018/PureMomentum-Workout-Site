@@ -137,3 +137,33 @@ $.ajax(settings).done(function (response) {
         console.log(randomExercises);
     }
 });
+
+// Adding the overrideAndErase function here
+function overrideAndErase() {
+    
+
+    // Erase the item in local storage
+    localStorage.removeItem(workoutTitleOnLoad);
+    
+    
+}
+document.getElementById("overrideTimer").addEventListener("click", function(event) {
+    // stop the default form submission behavior
+    event.preventDefault();
+
+    // ask for confirmation
+    var confirmed = window.confirm("Are you sure you want to override the timer?")
+
+    // check response
+    if (confirmed) {
+        // Call the overrideAndErase function
+        overrideAndErase();
+        //reloads page
+        location.reload();
+    }else{
+        null
+    }
+
+
+    
+});

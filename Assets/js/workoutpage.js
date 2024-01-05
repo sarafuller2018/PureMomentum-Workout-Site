@@ -1,7 +1,7 @@
 // get the from button and save it to local storage
 var workoutLinks = document.querySelectorAll(".title-names");
 var workoutTitle = localStorage.getItem("title");
-var overrideTimerElement = document.getElementById("overrideTimer");
+
 
 
 // 0.1 set the text value of the h1 by pulling from local storage 
@@ -25,7 +25,6 @@ function displayFinishRestingDay(workoutTitle){
     var FinishRestingDayElement = document.getElementById("finish-resting-day");
     if (FinishRestingDayElement) {
         FinishRestingDayElement.innerText = "Exercise will be available on : "+ restingDayValue;
-        
     }
 }
 
@@ -33,8 +32,6 @@ function displayFinishRestingDay(workoutTitle){
 document.getElementById("finish-button").addEventListener("click",function(){
     
     if (workoutTitle) {
-        // get button from html
-        
 
         // get current date
         var currentDate = new Date();
@@ -53,6 +50,7 @@ document.getElementById("finish-button").addEventListener("click",function(){
         // check if workout title exists in local storage and if it does display value
         if (checkWorkoutTitleInLocalStorage(workoutTitle)) {
             displayFinishRestingDay(workoutTitle);
+
         }
     } else {
         alert('No workout found ')
@@ -65,7 +63,6 @@ var workoutTitleOnLoad =localStorage.getItem('title');
 if (workoutTitleOnLoad && checkWorkoutTitleInLocalStorage(workoutTitleOnLoad)) {
     displayFinishRestingDay(workoutTitleOnLoad);
 }
-
 
 
 //-------exercises API ----------//

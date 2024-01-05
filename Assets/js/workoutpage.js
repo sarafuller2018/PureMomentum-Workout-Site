@@ -136,34 +136,28 @@ $.ajax(settings).done(function (response) {
 
         console.log(randomExercises);
     }
-});
-
-// Adding the overrideAndErase function here
-function overrideAndErase() {
-    
-
+})
+function overrideAndErase(event) {
     // Erase the item in local storage
     localStorage.removeItem(workoutTitleOnLoad);
     
-    
+    // Refresh the page
+    location.reload();
+    // Prevent the default form submission behavior
+    event.preventDefault();
 }
 document.getElementById("overrideTimer").addEventListener("click", function(event) {
-    // stop the default form submission behavior
+    // Prevent the default form submission behavior
     event.preventDefault();
 
-    // ask for confirmation
-    var confirmed = window.confirm("Are you sure you want to override the timer?")
+    // Ask for confirmation
+    var userConfirmed = window.confirm('Are you sure you want to override the timer?');
 
-    // check response
-    if (confirmed) {
+    // Check user's response
+    if (userConfirmed) {
         // Call the overrideAndErase function
         overrideAndErase();
-        //reloads page
-        location.reload();
-    }else{
+    } else {
         null
     }
-
-
-    
 });

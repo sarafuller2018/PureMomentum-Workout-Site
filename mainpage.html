@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="./Assets/CSS/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script><!--adding jquery to page-->
     <title>PureMomentum Main Page</title>
 </head>
 
@@ -49,7 +50,17 @@
         <button class="bg-green-200 text-xl">View Workout Journal</button>
     </a>
 
+    <section id="airQualityForm">
+        <form>
+            <label>Enter city to retrieve Local Air Quality Index: </label>
+            <input type="text" id="localCityName">
+            <input type="submit" id="localCitySubmitButton">
+        </form>
+    </section>
+
+    <section id="airQualityInformation">
+    </section>
+
     <script src="./Assets/js/mainpage.js" ></script>
 </body>
 </html>
-<!--the end-->

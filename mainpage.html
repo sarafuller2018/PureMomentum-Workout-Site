@@ -4,21 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
     <link rel="stylesheet" href="./Assets/CSS/style.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script><!--adding jquery to page-->
     <script src="https://cdn.tailwindcss.com"></script>
     <title>PureMomentum Main Page</title>
 </head>
 
-<body>
-    <header class="py-1">
-        <h1 class="bg-green-600 text-6xl font-bold flex items-center justify-center py-10 border-blue-500">PureMomentum</h1>
-        <img src="./Assets/images/ed1i8LJDhwVHiUBhgPfJ--1--ndhqv.webp" alt="Super swole anime chic!" class="logo mx-28 object-center"> <!--insert logo image here-->
-        <h2 class="text-purple-600 text-2xl font-semibold text-center py-3" >GET SWOLE, GET HARD!</h2>
+<body class="bg-gray-300">
+    <header class="py-0 space-y-4 bg-gray-300">
+        <h1 class="bg-green-600 text-8xl font-bold flex items-center justify-center py-10 border-8 border-blue-600">PureMomentum</h1>
+            <div class="flex justify-center"><img src="./Assets/images/ed1i8LJDhwVHiUBhgPfJ--1--ndhqv.webp" alt="Super swole anime chic!" class="logo border-4 border-black"> <!--insert logo image here--></div>
+        
+        <h2 class="text-purple-600 text-4xl font-semibold text-center my-6 py-2">GET SWOLE, GET HARD!</h2>
     </header>
 
-    <section class="workout-display py-3">
+    <section class="workout-display bg-blue-400 flex justify-center space-x-6 py-10">
         <div class="workouts">
+
+            <a  class = "title-names Available text-black font-semibold px-6 py-4 rounded-xl" href="./workoutpage.html"> Abdominal</a>
+        </div>
+
+        <div class="workouts">
+            <a class = "title-names Available text-black font-semibold px-6 py-4 rounded-xl" href="./workoutpage.html"> Calves</a>
+        </div>
+
+        <div class="workouts">
+            <a class = "title-names Available text-black font-semibold px-6 py-4 rounded-xl" href="./workoutpage.html"> Glutes</a>
+        </div>
+
+        <div class="workouts">
+            <a class = "title-names Available text-black font-semibold px-6 py-4 rounded-xl" href="./workoutpage.html">Chest</a>
+        </div>
+
+        <div class="workouts">
+            <a class = "title-names Available text-black font-semibold px-6 py-4 rounded-xl" href="./workoutpage.html">Hamstrings</a>
+        </div>
+
+        <div class="workouts">
+            <a class = "title-names Available text-black font-semibold px-6 py-4 rounded-xl" href="./workoutpage.html">Middle Back</a>
+        </div>
+
+        <div class="workouts">
+            <a class = "title-names Available text-black font-semibold px-6 py-4 rounded-xl" href="./workoutpage.html">Biceps</a>
+
             <a class="title-names Available" href="./workoutpage.html"> Abdominal</a>
         </div>
 
@@ -44,12 +76,25 @@
 
         <div class="workouts">
             <a class="title-names Available" href="./workoutpage.html">Biceps</a>
+
         </div>
     </section>
 
-    <a href="journallog.html">
-        <button class="bg-green-200 text-xl">View Workout Journal</button>
-    </a>
+    <section class="bg-green-600 py-3 space-x-10 columns-2">
+        <section id="airQualityForm">
+            <form class="flex">
+                <label class="text-2xl">Enter city to retrieve Local Air Quality Index: </label>
+                <input type="text" id="localCityName" class="border-black border-2">
+                <input type="submit" id="localCitySubmitButton" class="text-xl bg-gray-400 border-black border-4 rounded-lg px-2 font-bold">
+            </form>
+        </section>
+        <section class="float-end">
+            <button class="bg-green-300 border-black border-4 text-2xl px-3">
+            <a href="journallog.html">View Workout Journal</a>
+            </button>
+        </section>  
+
+
 
     <section id="airQualityForm" class="bg-">
         <form>
@@ -57,9 +102,10 @@
             <input type="text" id="localCityName">
             <input type="submit" id="localCitySubmitButton">
         </form>
+
     </section>
 
-    <section id="airQualityInformation">
+    <section id="airQualityInformation" class="bg-gray-300">
     </section>
 
     <script src="./Assets/js/mainpage.js"></script>

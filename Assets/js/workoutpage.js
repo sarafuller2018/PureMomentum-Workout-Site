@@ -15,14 +15,13 @@ function checkWorkoutTitleInLocalStorage(workoutTitle) {
 
 //0.3 Display the date on screen
 function displayFinishRestingDay(workoutTitle) {
-    // get value from local storage using the workout title as the key
+    // Get value from local storage using the workout title as the key
     var restingDayValue = localStorage.getItem(workoutTitle);
-    
 
-    // display the value in finish-resting-day element
+    // Display the value in finish-resting-day element
     var FinishRestingDayElement = document.getElementById("finish-resting-day");
     var RestingDayValueEl = document.getElementById("restingDayValue");
-    
+
     if (FinishRestingDayElement) {
         FinishRestingDayElement.innerText = "Exercise will be available on: ";
         RestingDayValueEl.innerText = restingDayValue;
@@ -63,7 +62,7 @@ if (workoutTitleOnLoad && checkWorkoutTitleInLocalStorage(workoutTitleOnLoad)) {
     displayFinishRestingDay(workoutTitleOnLoad);
 }
 
-//------- exercises API ----------//
+//------- exercise API ----------//
 
 // Getting the title text as the exercise name 
 var muscle = workoutTitle
@@ -128,18 +127,19 @@ $.ajax(settings).done(function (response) {
 
         console.log(randomExercises);
     }
-})
-// clear timer 
+});
+
+// Clear timer 
 function overrideAndErase(event) {
     // Erase the item in local storage
     localStorage.removeItem(workoutTitleOnLoad);
-    
+
     // Refresh the page
     location.reload();
     // Prevent the default form submission behavior
     event.preventDefault();
 }
-document.getElementById("overrideTimer").addEventListener("click", function(event) {
+document.getElementById("overrideTimer").addEventListener("click", function (event) {
     // Prevent the default form submission behavior
     event.preventDefault();
 

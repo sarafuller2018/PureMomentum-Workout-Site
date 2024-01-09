@@ -9,7 +9,6 @@ if (JSON.parse(localStorage.getItem("journals")) !== null) {
     savedJournalArray = JSON.parse(localStorage.getItem("journals"));
 };
 
-
 // Appends current journal and adds to local storage on submit 
 journalEntrySubmitButtonEl.addEventListener("click", function () {
 
@@ -17,14 +16,14 @@ journalEntrySubmitButtonEl.addEventListener("click", function () {
     console.log(journalEntry);
 
     if (journalEntry !== "") {
-    var addCurrentJournalEl = document.createElement("li");
-    addCurrentJournalEl.textContent = journalEntry;
-    currentJournalEl.appendChild(addCurrentJournalEl);
+        var addCurrentJournalEl = document.createElement("li");
+        addCurrentJournalEl.textContent = journalEntry;
+        currentJournalEl.appendChild(addCurrentJournalEl);
 
-    savedJournalArray.unshift(journalEntry)
-    console.log(savedJournalArray);
+        savedJournalArray.unshift(journalEntry)
+        console.log(savedJournalArray);
 
-    localStorage.setItem("journals", JSON.stringify(savedJournalArray));
+        localStorage.setItem("journals", JSON.stringify(savedJournalArray));
     } else {
         alert("Please enter a valid journal entry.")
     };

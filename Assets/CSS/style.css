@@ -16,7 +16,6 @@
     border-radius: 5px;
 }
 
-
 .Available {
     background-color: green
 }
@@ -29,8 +28,8 @@
 #exerciseContainer {
     display: flex;
     flex-direction: row;
-   text-align: center;
-    
+    text-align: center;
+
 }
 
 .exercise-styling {
@@ -43,9 +42,11 @@
     height: 115px;
     overflow: hidden;
 }
-.exercise-styling:hover{
+
+.exercise-styling:hover {
     height: fit-content;
 }
+
 /* Login page showing exercises */
 #login-page {
     display: flex;
@@ -66,17 +67,26 @@
     cursor: pointer;
 }
 
-.logo{
+.logo {
     width: 300px;
     height: 250px;
 }
 
 .logo-font {
- font-size: 150px;
+    font-size: 150px;
 }
 
 
-/* workout page */
-.button-section{
+/* Workout page */
+.button-section {
     text-align: center;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 992px) {
+    . {}
+}
+
+@media screen and (max-width: 768px) {
+    . {}
 }

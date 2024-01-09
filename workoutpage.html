@@ -11,28 +11,37 @@
     <title>PureMomentum Workout</title>
 </head>
 
-<body>
-    <header class="py-0 space-y-4 bg-gray-300">
-        <div class=" flex-container">
-            <h1 id="workout-name" class="bg-green-600 text-8xl font-bold flex items-center justify-center py-10 border-8 border-blue-600"></h1>
-            <i class="fa-solid fa-hurricane"></i>
+<body class="bg-gray-300">
+    <header class="py-0 space-y-4">
+        <div class=" flex-container pb-1">
+            <h1 id="workout-name"
+                class="bg-green-600 text-8xl font-bold flex items-center justify-center py-10 border-8 border-blue-600">
+            </h1>
+            <i class="fa-solid fa-hurricane logo-font flex justify-center my-3"></i>
         </div>
-        <h1 id="finish-resting-day"></h1>
-        <p><!--insert timer here--></p>
+
+        <div>
+            <h1 id="finish-resting-day" class="text-2xl text-center"></h1>
+        </div>
+
+        <div id="restingDayValue" class="text-2xl text-center text-red-600">
+        </div>
     </header>
 
     <section id="exerciseContainer">
         <!--API appends workout to this section-->
     </section>
 
-    <section class="button-section">
+    <section class="button-section my-10 space-x-4">
         <a href="journallog.html">
-            <button id="finish-button">finish</button> <!--takes you to journal log and begins timer-->
+            <button id="finish-button" class="bg-green-300 border-black border-4 text-2xl py-1 w-64">Finish</button>
+            <!--takes you to journal log and begins timer-->
         </a>
 
-        <a href="mainpage.html">
-            <button>Home Page</button>
-            <button id="overrideTimer" >Workout!!</button>
+        <a href="mainpage.html" class="space-x-4">
+            <button class="bg-green-300 border-black border-4 text-2xl py-1 w-64">Home Page</button>
+            <button id="overrideTimer" class="bg-green-300 border-black border-4 text-2xl py-1 w-64">Override
+                Cool-Down</button>
         </a>
     </section>
 

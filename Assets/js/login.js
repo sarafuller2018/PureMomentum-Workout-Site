@@ -1,9 +1,9 @@
-// check if theres a user in local storage when page loads
-document.addEventListener("DOMContentLoaded", function() {
+// Check if theres a user in local storage when page loads
+document.addEventListener("DOMContentLoaded", function () {
     var userData = localStorage.getItem("user");
 
 
-    // if user exists redirect to mainpaige.html
+    // If user exists redirect to mainpaige.html
     if (userData) {
         window.location.href = "mainpage.html";
     }
@@ -25,7 +25,7 @@ function saveToLocalStorage() {
         // Convert the object to a JSON string and store in local storage
         localStorage.setItem('user', JSON.stringify(user));
 
-        // clear input 
+        // Clear input 
         document.getElementById("login-name").value = "";
         document.getElementById("login-lastName").value = "";
         window.location.href = "mainpage.html";

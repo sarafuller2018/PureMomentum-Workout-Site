@@ -11,17 +11,17 @@
     <title>PureMomentum Login</title>
 </head>
 
-<body>
+<body class="bg-gray-300">
     <header>
-        <h1>PureMomentum</h1>
+        <h1 class="bg-green-600 text-8xl font-bold flex items-center justify-center py-10 border-8 border-blue-600">PureMomentum</h1>
         <i class="fa-solid fa-hurricane"></i>
     </header>
 
-    <section>
-        <div id="login-page">
-            <input class="input-field" id="login-name" type="text" placeholder="First Name">
-            <input class="input-field" id="login-lastName" type="text" placeholder="Last Name">
-            <button id="button" onclick="saveToLocalStorage()">Submit</button>
+    <section class="text-4xl font-semibold text-center">
+        <div id="login-page" class="space-y-6">
+            <input class="input-field text-center border-4 border-black rounded-lg text-purple-600 py-3" id="login-name" type="text" placeholder="First Name">
+            <input class="input-field text-center border-4 border-black rounded-lg text-purple-600 py-3" id="login-lastName" type="text" placeholder="Last Name">
+            <button id="button" onclick="saveToLocalStorage()" class="bg-green-300 border-4 border-black rounded-xl">Submit</button>
         </div>
         <!-- We'll need to make the name appear on this same page once submitted and then maybe another button to direct to mainpage -->
         <!-- main page should also maybe show name somewhere? -->

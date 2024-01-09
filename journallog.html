@@ -11,18 +11,18 @@
 
 </head>
 
-<body>
-    <header>
-        <h1>PureMomentum</h1>
-        <i class="fa-solid fa-hurricane"></i>
+<body class="bg-gray-300">
+    <header class="py-0 space-y-4 bg-gray-300">
+        <h1 class="bg-green-600 text-8xl font-bold flex items-center justify-center py-10 border-8 border-blue-600">PureMomentum</h1>
+        <i class="fa-solid fa-hurricane logo-font flex justify-center"></i>
     </header>
 
     <section>
         <form>
-            <label>Submit the date, the area of focus for the workout, and a brief journal log describing your workout
+            <label class="text-2xl">Submit the date, the area of focus for the workout, and a brief journal log describing your workout
                 and personal feedback.</label>
-            <input type="text" id="journalEntry"> <!--save to localStorage--><!--then retrieved from localStorage-->
-            <input type="submit" id="submitJournalButton">
+            <input type="text" id="journalEntry" class="border-black border-2"> <!--save to localStorage--><!--then retrieved from localStorage-->
+            <input type="submit" id="submitJournalButton" class="text-xl bg-gray-400 border-black border-4 rounded-lg px-2 font-bold">
         </form>
     </section>
 
@@ -33,7 +33,7 @@
     </section>
 
     <a href="mainpage.html">
-        <button>Home Page</button>
+        <button class="bg-green-300 border-black border-4 text-2xl px-3">Home Page</button>
     </a>
 
     <script src="./Assets/js/journallog.js"></script>

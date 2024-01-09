@@ -124,6 +124,7 @@ $.ajax(settings).done(function (response) {
         console.log(randomExercises);
     }
 })
+// clear timer 
 function overrideAndErase(event) {
     // Erase the item in local storage
     localStorage.removeItem(workoutTitleOnLoad);

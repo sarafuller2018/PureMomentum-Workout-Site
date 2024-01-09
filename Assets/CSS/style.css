@@ -29,6 +29,8 @@
 #exerciseContainer {
     display: flex;
     flex-direction: row;
+   
+    
 }
 
 .exercise-styling {
@@ -37,8 +39,12 @@
     border: 1px solid black;
     padding: 10px;
     margin-bottom: 20px;
+    height: 40px;
+    overflow: hidden;
 }
-
+.exercise-styling:hover{
+    height: fit-content;
+}
 /* Login page showing exercises */
 #login-page {
     display: flex;

@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
+
     <link rel="stylesheet" href="./Assets/CSS/style.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script><!--adding jquery to page-->
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>PureMomentum Main Page</title>
 </head>
 
@@ -19,6 +24,7 @@
 
     <section class="workout-display bg-blue-400 flex justify-center space-x-6 py-10">
         <div class="workouts">
+
             <a  class = "title-names Available text-black font-semibold px-6 py-4 rounded-xl" href="./workoutpage.html"> Abdominal</a>
         </div>
 
@@ -44,6 +50,33 @@
 
         <div class="workouts">
             <a class = "title-names Available text-black font-semibold px-6 py-4 rounded-xl" href="./workoutpage.html">Biceps</a>
+
+            <a class="title-names Available" href="./workoutpage.html"> Abdominal</a>
+        </div>
+
+        <div class="workouts">
+            <a class="title-names Available" href="./workoutpage.html"> Calves</a>
+        </div>
+
+        <div class="workouts">
+            <a class="title-names Available" href="./workoutpage.html"> Glutes</a>
+        </div>
+
+        <div class="workouts">
+            <a class="title-names Available" href="./workoutpage.html">Chest</a>
+        </div>
+
+        <div class="workouts">
+            <a class="title-names Available" href="./workoutpage.html">Hamstrings</a>
+        </div>
+
+        <div class="workouts">
+            <a class="title-names Available" href="./workoutpage.html">Middle Back</a>
+        </div>
+
+        <div class="workouts">
+            <a class="title-names Available" href="./workoutpage.html">Biceps</a>
+
         </div>
     </section>
 
@@ -61,11 +94,21 @@
             </button>
         </section>  
 
+
+
+    <section id="airQualityForm" class="bg-">
+        <form>
+            <label>Enter city to retrieve Local Air Quality Index: </label>
+            <input type="text" id="localCityName">
+            <input type="submit" id="localCitySubmitButton">
+        </form>
+
     </section>
 
     <section id="airQualityInformation" class="bg-gray-300">
     </section>
 
-    <script src="./Assets/js/mainpage.js" ></script>
+    <script src="./Assets/js/mainpage.js"></script>
 </body>
+
 </html>

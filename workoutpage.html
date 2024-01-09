@@ -12,10 +12,12 @@
 </head>
 
 <body>
-    <header>
-        <h1 id="workout-name"></h1>
+    <header class="py-0 space-y-4 bg-gray-300">
+        <div class=" flex-container">
+            <h1 id="workout-name" class="bg-green-600 text-8xl font-bold flex items-center justify-center py-10 border-8 border-blue-600"></h1>
+            <i class="fa-solid fa-hurricane"></i>
+        </div>
         <h1 id="finish-resting-day"></h1>
-        <img> <i class="fa-solid fa-hurricane"></i>
         <p><!--insert timer here--></p>
     </header>
 
@@ -23,7 +25,7 @@
         <!--API appends workout to this section-->
     </section>
 
-    <section>
+    <section class="button-section">
         <a href="journallog.html">
             <button id="finish-button">finish</button> <!--takes you to journal log and begins timer-->
         </a>

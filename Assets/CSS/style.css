@@ -66,3 +66,9 @@
     height: 250px;
    
 }
+
+
+/* workout page */
+.button-section  button{
+    background-color: rgb(156 163 175) ;
+}

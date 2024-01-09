@@ -16,7 +16,8 @@ journalEntrySubmitButtonEl.addEventListener("click", function () {
     var journalEntry = journalEntryEl.value;
     console.log(journalEntry);
 
-    var addCurrentJournalEl = document.createElement("p");
+    if (journalEntry !== "") {
+    var addCurrentJournalEl = document.createElement("li");
     addCurrentJournalEl.textContent = journalEntry;
     currentJournalEl.appendChild(addCurrentJournalEl);
 
@@ -24,6 +25,9 @@ journalEntrySubmitButtonEl.addEventListener("click", function () {
     console.log(savedJournalArray);
 
     localStorage.setItem("journals", JSON.stringify(savedJournalArray));
+    } else {
+        alert("Please enter a valid journal entry.")
+    };
 });
 
 // Adds local storage journal history to page
@@ -32,7 +36,7 @@ function renderHistory() {
     console.log(journalArray);
 
     for (i = 0; i < journalArray.length; i++) {
-        var addJournalEl = document.createElement("p");
+        var addJournalEl = document.createElement("li");
         addJournalEl.textContent = journalArray[i];
         previousJournalsEl.appendChild(addJournalEl);
     }

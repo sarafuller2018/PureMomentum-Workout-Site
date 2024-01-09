@@ -29,17 +29,18 @@
 #exerciseContainer {
     display: flex;
     flex-direction: row;
-   
+   text-align: center;
     
 }
 
 .exercise-styling {
     width: 20vw;
     margin-right: 20px;
+    margin-left: 20px;
     border: 1px solid black;
     padding: 10px;
     margin-bottom: 20px;
-    height: 40px;
+    height: 115px;
     overflow: hidden;
 }
 .exercise-styling:hover{
@@ -78,7 +79,4 @@
 /* workout page */
 .button-section{
     text-align: center;
-}
-.button-section  button{
-    background-color: rgb(156 163 175) ;
 }

@@ -17,11 +17,15 @@ function checkWorkoutTitleInLocalStorage(workoutTitle) {
 function displayFinishRestingDay(workoutTitle) {
     // get value from local storage using the workout title as the key
     var restingDayValue = localStorage.getItem(workoutTitle);
+    
 
     // display the value in finish-resting-day element
     var FinishRestingDayElement = document.getElementById("finish-resting-day");
+    var RestingDayValueEl = document.getElementById("restingDayValue");
+    
     if (FinishRestingDayElement) {
-        FinishRestingDayElement.innerText = "Exercise will be available on : " + restingDayValue;
+        FinishRestingDayElement.innerText = "Exercise will be available on: ";
+        RestingDayValueEl.innerText = restingDayValue;
     }
 }
 
@@ -96,10 +100,11 @@ $.ajax(settings).done(function (response) {
 
             // Check if theres a timer on this page and if there is dont show exercises
             if (!checkWorkoutTitleInLocalStorage(workoutTitle)) {
-                const exerciseDiv = $("<div>").attr("id", divID).addClass("exercise-styling");
+                const exerciseDiv = $("<div>").attr("id", divID).addClass("exercise-styling bg-green-600");
 
                 // Create element 
                 const exerciseName = $("<h1>").attr('id', divID).text("Exercise: " + exercise.name);
+                exerciseName.addClass("font-bold text-2xl py-9");
                 const exercisedifficulty = $("<p>").attr('id', divID).text("Difficulty: " + exercise.difficulty);
                 const exerciseequipment = $("<p>").attr('id', divID).text("Equipment: " + exercise.equipment);
                 const exerciseinstructions = $("<p>").attr('id', divID).text("Instructions: " + exercise.instructions);

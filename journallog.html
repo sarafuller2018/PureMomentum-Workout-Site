@@ -17,24 +17,30 @@
         <i class="fa-solid fa-hurricane logo-font flex justify-center"></i>
     </header>
 
-    <section>
-        <form>
-            <label class="text-2xl">Submit the date, the area of focus for the workout, and a brief journal log describing your workout
-                and personal feedback.</label>
-            <input type="text" id="journalEntry" class="border-black border-2"> <!--save to localStorage--><!--then retrieved from localStorage-->
-            <input type="submit" id="submitJournalButton" class="text-xl bg-gray-400 border-black border-4 rounded-lg px-2 font-bold">
+    <section class="flex-col">
+        
+        <label class="text-2xl flex justify-center my-2">Submit the date, the area of focus for the workout, and a brief journal log describing your workout
+            and personal feedback.</label>
+
+        <form class="flex justify-center space-x-10">
+            <input type="text" id="journalEntry" class="border-black border-2 py-10 px-56 my-2 text"> <!--save to localStorage--><!--then retrieved from localStorage-->
+            <input type="submit" id="submitJournalButton" class="text-xl bg-gray-400 border-black border-4 rounded-lg w-52 h-24 mt-3">
         </form>
     </section>
 
-    <section>
+    <section class="bg-blue-400 text-2xl my-2 mx-5 px-2 py-2 border-2 border-black">
+        <h2 class="text-center text-3xl">Journal Log:</h2>
         <div id="currentJournal"></div>
         <div id="previousJournals"></div>
         <!--localstorage displays previous workout journals-->
     </section>
-
+    
+<section class="flex justify-center">
     <a href="mainpage.html">
-        <button class="bg-green-300 border-black border-4 text-2xl px-3">Home Page</button>
+        <button class="bg-green-300 border-black border-4 text-2xl py-1 w-64">Home Page</button>
     </a>
+</section>
+
 
     <script src="./Assets/js/journallog.js"></script>
 </body>

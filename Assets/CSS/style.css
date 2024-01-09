@@ -1,52 +1,68 @@
 
+
 .workouts {
-    margin: 10px; /* Add margin for spacing between elements */
+    margin: 10px;
+    /* Add margin for spacing between elements */
     margin-top: 50vh;
 }
+
 .workout-display {
     display: flex;
     justify-content: center;
 }
+
 .workouts a {
     text-decoration: none;
     padding: 8px 16px;
     color: #fff;
     border-radius: 5px;
 }
+
+
 .Available {
-    background-color:green
-}
-.not-Available {
-    background-color:red
+    background-color: green
 }
 
-/* workout page showing exercises */
+.not-Available {
+    background-color: red
+}
+
+/* Workout page showing exercises */
 #exerciseContainer {
     display: flex;
     flex-direction: row;
 }
-.exercise-styling{
+
+.exercise-styling {
     width: 20vw;
     margin-right: 20px;
     border: 1px solid black;
-    padding:10px;
+    padding: 10px;
     margin-bottom: 20px;
 }
 
-/* login page showing exercises */
-#login-page{
+/* Login page showing exercises */
+#login-page {
     display: flex;
     flex-direction: column;
     margin: 10px;
     align-items: center;
     justify-content: center;
 }
-.input-field{
+
+.input-field {
     margin: 10px;
 }
-#button{
+
+#button {
     border: 2px solid black;
     padding: 5px;
     z-index: 5;
     cursor: pointer;
+}
+
+.logo{
+    width: 300px;
+    height: 250px;
+   
 }

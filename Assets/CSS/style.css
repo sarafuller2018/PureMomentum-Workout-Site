@@ -9,13 +9,18 @@
     justify-content: center;
 }
 
+.workout-display a {
+    margin: 10px;
+    width: 150px;
+    justify-content: center;
+}
+
 .workouts a {
     text-decoration: none;
     padding: 8px 16px;
     color: #fff;
     border-radius: 5px;
 }
-
 
 .Available {
     background-color: green
@@ -29,9 +34,9 @@
 #exerciseContainer {
     display: flex;
     flex-direction: column;
-   text-align: center;
-   align-items: center;
-    
+    text-align: center;
+    align-items: center;
+
 }
 
 .exercise-styling {
@@ -44,10 +49,12 @@
     height: 115px;
     overflow: hidden;
 }
- .closeButton{
+
+.closeButton {
     margin-right: -87%;
     padding: 5px;
- }
+}
+
 /* Login page showing exercises */
 #login-page {
     display: flex;
@@ -59,29 +66,101 @@
 
 .input-field {
     margin: 10px;
+    width: 300px;
 }
 
 
-.logo{
+.logo {
     width: 300px;
     height: 250px;
 }
 
 .logo-font {
- font-size: 150px;
+    font-size: 150px;
 }
 
 
-/* workout page */
-.button-section{
+/* Workout page */
+.button-section {
     text-align: center;
-    margin-bottom: 30px;
 }
-.button-section button{
+
+.button-section button {
     margin-top: 10px;
     margin-right: 10px;
 }
-#overrideTimer{
+
+#overrideTimer {
     display: none;
     padding-left: 15px;
+}
+
+/* Responsiveness */
+
+.header-size {
+    font-size: 100px;
+}
+
+#airQualitySection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#journalEntrySection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.journalFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.journalInput {
+    text-align: center;
+}
+
+@media screen and (max-width:912px) {
+    .workout-display {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .workout-display a {
+        margin: 10px;
+        width: 50vw;
+    }
+
+    #airQualitySection {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #airQualitySection form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #returnToJournal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-size {
+        font-size: 10vw;
+    }
+
+    .input-field {
+        width: 50vw;
+    }
+
+    .journalInput {
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+    }
 }

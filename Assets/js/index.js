@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var userData = localStorage.getItem("user");
 
-
     // If user exists redirect to mainpaige.html
     if (userData) {
         window.location.href = "mainpage.html";
@@ -34,4 +33,4 @@ function saveToLocalStorage() {
         // Alert the user if any of the fields are empty
         alert('Please fill in both fields before submitting.');
     }
-}
+};

@@ -97,6 +97,11 @@
 
 /* Responsiveness */
 
+#viewWorkoutButton {
+    height: fit-content;
+    padding: 5px;
+}
+
 .header-size {
     font-size: 100px;
 }

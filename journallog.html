@@ -13,33 +13,36 @@
 
 <body class="bg-gray-300">
     <header class="py-0 space-y-4 bg-gray-300">
-        <h1 class="bg-green-600 text-8xl font-bold flex items-center justify-center py-10 border-8 border-blue-600">PureMomentum</h1>
-        <i class="fa-solid fa-hurricane logo-font flex justify-center"></i>
+        <h1 class="header-size bg-green-600 font-bold flex items-center justify-center py-10 border-8 border-blue-600">
+            PureMomentum</h1>
     </header>
 
-    <section class="flex-col">
-        
-        <label class="text-2xl flex justify-center my-2">Submit the date, the area of focus for the workout, and a brief journal log describing your workout
-            and personal feedback.</label>
+    <section id="journalEntrySection">
 
-        <form class="flex justify-center space-x-10">
-            <input type="text" id="journalEntry" class="border-black border-2 py-10 px-56 my-2 text"> <!--save to localStorage--><!--then retrieved from localStorage-->
-            <input type="submit" id="submitJournalButton" class="text-xl bg-gray-400 border-black border-4 rounded-lg w-52 h-24 mt-3">
+        <form class="journalFlex">
+            <label class="journalInput text-2xl my-2">Submit the date, the area of focus for the workout, and a brief
+                journal log describing your workout
+                and personal feedback.</label>
+            <input type="text" id="journalEntry"
+                class="journalInput journalFlex border-black border-2 py-10 px-56 my-2 text">
+            <!--save to localStorage--><!--then retrieved from localStorage-->
+            <input type="submit" id="submitJournalButton"
+                class="journalFlex text-xl bg-gray-400 border-black border-4 rounded-lg w-52 h-10 mt-3">
         </form>
     </section>
 
-    <section class="bg-blue-400 text-2xl my-2 mx-5 px-2 py-2 border-2 border-black">
+    <section class="bg-blue-400 text-2xl my-2 mx-5 px-2 py-2 border-2 border-black mt-10 mb-10">
         <h2 class="text-center text-3xl">Journal Log:</h2>
         <div id="currentJournal"></div>
         <div id="previousJournals"></div>
         <!--localstorage displays previous workout journals-->
     </section>
-    
-<section class="flex justify-center">
-    <a href="mainpage.html">
-        <button class="bg-green-300 border-black border-4 text-2xl py-1 w-64">Home Page</button>
-    </a>
-</section>
+
+    <section class="flex justify-center">
+        <a href="mainpage.html">
+            <button class="bg-green-300 border-black border-4 text-2xl py-1 w-64">Home Page</button>
+        </a>
+    </section>
 
 
     <script src="./Assets/js/journallog.js"></script>

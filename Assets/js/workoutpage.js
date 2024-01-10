@@ -1,8 +1,15 @@
 // Get the from button and save it to local storage
 var workoutLinks = document.querySelectorAll(".title-names");
 var workoutTitle = localStorage.getItem("title");
+var displayOverrideButton = document.getElementById("overrideTimer")
 
+
+// get value from local storage using the workout title as the key
+var restingDayValue = localStorage.getItem(workoutTitle);
 // 0.1 Set the text value of the h1 by pulling from local storage 
+
+
+
 var workoutNameElement = document.getElementById("workout-name");
 if (workoutNameElement) {
     workoutNameElement.innerText = workoutTitle;
@@ -25,7 +32,10 @@ function displayFinishRestingDay(workoutTitle) {
     if (FinishRestingDayElement) {
         FinishRestingDayElement.innerText = "Exercise will be available on: ";
         RestingDayValueEl.innerText = restingDayValue;
+        displayOverrideButton.style.display = "inline-flex"
     }
+
+
 }
 
 //0.4 Finish button adds 7 day to current date and saves to local storage and naming it aftet what the title text is 
@@ -89,6 +99,9 @@ $.ajax(settings).done(function (response) {
         // Get id element from html
         const container = $("#exerciseContainer");
 
+        // Variable to keep track of the currently active exerciseDiv
+        let activeExerciseDiv = null;
+
         // Clears container
         container.empty();
 
@@ -97,7 +110,7 @@ $.ajax(settings).done(function (response) {
             // Create a unique ID for each div
             const divID = "exerciseDiv" + index;
 
-            // Check if theres a timer on this page and if there is dont show exercises
+            // Check if there's a timer on this page and if there is, don't show exercises
             if (!checkWorkoutTitleInLocalStorage(workoutTitle)) {
                 const exerciseDiv = $("<div>").attr("id", divID).addClass("exercise-styling bg-green-600");
 
@@ -109,6 +122,7 @@ $.ajax(settings).done(function (response) {
                 const exerciseinstructions = $("<p>").attr('id', divID).text("Instructions: " + exercise.instructions);
                 const exercisemuscle = $("<p>").attr('id', divID).text("Muscle: " + exercise.muscle);
                 const exercisetype = $("<p>").attr('id', divID).text("Type: " + exercise.type);
+                const closeButton = $("<button>").text("Close").addClass("closeButton bg-green-300 border-black border-2");
 
                 // Appends each element inside a div 
                 exerciseDiv.append(exerciseName);
@@ -117,13 +131,46 @@ $.ajax(settings).done(function (response) {
                 exerciseDiv.append(exercisedifficulty);
                 exerciseDiv.append(exerciseequipment);
                 exerciseDiv.append(exerciseinstructions);
+                exerciseDiv.append(closeButton);
 
                 // Appends all the divs inside the container
                 container.append(exerciseDiv);
-            } else {
-                null
+
+                // give a click event listener to the exerciseDiv
+                exerciseDiv.on('click', function (event) {
+                    event.stopPropagation(); // stops the event listener from reaching the parent element
+
+                    // Check if another exerciseDiv is active, and reset its styles
+                    if (activeExerciseDiv && activeExerciseDiv !== exerciseDiv) {
+                        activeExerciseDiv.css({
+                            'height': '115px',
+                            'width': '50vw',
+                            'border': '1px solid black'
+                        });
+                    }
+
+                    // change the height, width, and border properties when clicked
+                    exerciseDiv.css({
+                        'height': 'fit-content',
+                        'width': 'fit-content',
+                        'border': '4px solid rgb(37, 99, 235)'
+                    });
+
+                    // set the curent clicked element 
+                    activeExerciseDiv = exerciseDiv;
+                });
+                closeButton.on("click", function (event) {
+                    event.stopPropagation();
+
+                    //reset the styling
+                    exerciseDiv.css({
+                        'height': '115px',
+                        'width': '50vw',
+                        'border': '1px solid black'
+                    });
+                });
             }
-        })
+        });
 
         console.log(randomExercises);
     }

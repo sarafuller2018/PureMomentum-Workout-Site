@@ -32,7 +32,7 @@ function displayFinishRestingDay(workoutTitle) {
     if (FinishRestingDayElement) {
         FinishRestingDayElement.innerText = "Exercise will be available on: ";
         RestingDayValueEl.innerText = restingDayValue;
-        displayOverrideButton.style.display = "inline-flex"
+        displayOverrideButton.style.display = "inline"
     }
 
 

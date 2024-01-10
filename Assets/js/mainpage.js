@@ -108,32 +108,32 @@ function getAirQuality(city) {
             if (result.overall_aqi <= 50) {
                 createAQIRating.textContent = "Green: Good";
                 createAQIDescription.textContent = "Air quality is satisfactory, and air pollution poses little or no risk."
-                //want to highlight this green
+                // highlight this green
                 createAQIRating.classList.add("bg-green-400");
             } else if (51 <= result.overall_aqi && result.overall_aqi <= 100) {
                 createAQIRating.textContent = "Yellow: Moderate";
                 createAQIDescription.textContent = "Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution."
-                //want to highlight this yellow
+                // highlight this yellow
                 createAQIRating.classList.add("bg-yellow-400");
             } else if (101 <= result.overall_aqi && result.overall_aqi <= 150) {
                 createAQIRating.textContent = "Orange: Unhealthy for Sensitive Groups";
                 createAQIDescription.textContent = "Members of sensitive groups may experience health effects. The general public is less likely to be affected."
-                //want to highlight this orange
+                // highlight this orange
                 createAQIRating.classList.add("bg-orange-400");
             } else if (151 <= result.overall_aqi && result.overall_aqi <= 200) {
                 createAQIRating.textContent = "Red: Unhealthy";
                 createAQIDescription.textContent = "Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects."
-                //want to highlight this light red
+                // highlight this light red
                 createAQIRating.classList.add("bg-red-200");
             } else if (201 <= result.overall_aqi && result.overall_aqi <= 300) {
                 createAQIRating.textContent = "Purple: Very Unhealthy";
                 createAQIDescription.textContent = "Health alert: The risk of health effects is increased for everyone."
-                //want to highlight this purple
+                // highlight this purple
                 createAQIRating.classList.add("bg-purple-400");
             } else {
                 createAQIRating.textContent = "Maroon: Hazardous";
                 createAQIDescription.textContent = "Health warning of emergency conditions: everyone is more likely to be affected."
-                //want to highlight this dark red
+                // highlight this dark red
                 createAQIRating.classList.add("bg-red-700");
             };
 

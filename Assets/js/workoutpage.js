@@ -22,23 +22,21 @@ function checkWorkoutTitleInLocalStorage(workoutTitle) {
 
 //0.3 Display the date on screen
 function displayFinishRestingDay(workoutTitle) {
-    // get value from local storage using the workout title as the key
+    // Get value from local storage using the workout title as the key
     var restingDayValue = localStorage.getItem(workoutTitle);
-    
 
-    // display the value in finish-resting-day element
+    // Display the value in finish-resting-day element
     var FinishRestingDayElement = document.getElementById("finish-resting-day");
     var RestingDayValueEl = document.getElementById("restingDayValue");
-    
+
     if (FinishRestingDayElement) {
         FinishRestingDayElement.innerText = "Exercise will be available on: ";
         RestingDayValueEl.innerText = restingDayValue;
         displayOverrideButton.style.display = "inline-flexcdeseeeeeeeeeeeeeeyyyttwyywttrrrrrrqtfyugyiuoihdsgafdahhhhhhhgggggggggggggghhhwwwwhhhjjjuuuhhbbzvvzbv         `"
     }
 
-    
-}
 
+}
 
 //0.4 Finish button adds 7 day to current date and saves to local storage and naming it aftet what the title text is 
 document.getElementById("finish-button").addEventListener("click", function () {
@@ -61,7 +59,7 @@ document.getElementById("finish-button").addEventListener("click", function () {
         // Check if workout title exists in local storage and if it does display value
         if (checkWorkoutTitleInLocalStorage(workoutTitle)) {
             displayFinishRestingDay(workoutTitle);
-            
+
         } else {
             alert('No workout found ')
         }
@@ -74,7 +72,7 @@ if (workoutTitleOnLoad && checkWorkoutTitleInLocalStorage(workoutTitleOnLoad)) {
     displayFinishRestingDay(workoutTitleOnLoad);
 }
 
-//------- exercises API ----------//
+//------- exercise API ----------//
 
 // Getting the title text as the exercise name 
 var muscle = workoutTitle
@@ -100,7 +98,7 @@ $.ajax(settings).done(function (response) {
 
         // Get id element from html
         const container = $("#exerciseContainer");
-        
+
         // Variable to keep track of the currently active exerciseDiv
         let activeExerciseDiv = null;
 
@@ -139,14 +137,14 @@ $.ajax(settings).done(function (response) {
                 container.append(exerciseDiv);
 
                 // give a click event listener to the exerciseDiv
-                exerciseDiv.on('click', function(event) {
+                exerciseDiv.on('click', function (event) {
                     event.stopPropagation(); // stops the event listener from reaching the parent element
 
                     // Check if another exerciseDiv is active, and reset its styles
                     if (activeExerciseDiv && activeExerciseDiv !== exerciseDiv) {
-                        activeExerciseDiv.css({ 
+                        activeExerciseDiv.css({
                             'height': '115px',
-                            'width': '50vw',   
+                            'width': '50vw',
                             'border': '1px solid black'
                         });
                     }
@@ -161,7 +159,7 @@ $.ajax(settings).done(function (response) {
                     // set the curent clicked element 
                     activeExerciseDiv = exerciseDiv;
                 });
-                closeButton.on("click", function(event){
+                closeButton.on("click", function (event) {
                     event.stopPropagation();
 
                     //reset the styling
@@ -176,18 +174,19 @@ $.ajax(settings).done(function (response) {
 
         console.log(randomExercises);
     }
-})
-// clear timer 
+});
+
+// Clear timer 
 function overrideAndErase(event) {
     // Erase the item in local storage
     localStorage.removeItem(workoutTitleOnLoad);
-    
+
     // Refresh the page
     location.reload();
     // Prevent the default form submission behavior
     event.preventDefault();
 }
-document.getElementById("overrideTimer").addEventListener("click", function(event) {
+document.getElementById("overrideTimer").addEventListener("click", function (event) {
     // Prevent the default form submission behavior
     event.preventDefault();
 
@@ -202,6 +201,3 @@ document.getElementById("overrideTimer").addEventListener("click", function(even
         null
     }
 });
-
-
-

@@ -49,11 +49,18 @@
     height: 115px;
     overflow: hidden;
 }
-
+.namePadding{
+    padding-top: 7px;
+    padding-bottom: 90px;
+}
 .closeButton {
     margin-right: -87%;
     padding: 5px;
 }
+.button-section{
+    margin-bottom: 30px;
+}
+
 
 /* Login page showing exercises */
 #login-page {

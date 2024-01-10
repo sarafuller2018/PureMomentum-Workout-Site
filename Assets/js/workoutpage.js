@@ -116,7 +116,7 @@ $.ajax(settings).done(function (response) {
 
                 // Create element 
                 const exerciseName = $("<h1>").attr('id', divID).text("Exercise: " + exercise.name);
-                exerciseName.addClass("font-bold text-2xl py-9");
+                exerciseName.addClass("font-bold text-2xl namePadding");
                 const exercisedifficulty = $("<p>").attr('id', divID).text("Difficulty: " + exercise.difficulty);
                 const exerciseequipment = $("<p>").attr('id', divID).text("Equipment: " + exercise.equipment);
                 const exerciseinstructions = $("<p>").attr('id', divID).text("Instructions: " + exercise.instructions);
